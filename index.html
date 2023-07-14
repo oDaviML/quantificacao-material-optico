@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantificação de Material</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Quantificação de Material</h1>
+    
+    <section>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label for="numeroPavimentos">Nº de pavimentos da edificação:</label>
+                    <input type="number" class="form-control" id="numeroPavimentos" min="1">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="numeroFibras">Nº de fibras disponíveis:</label>
+                    <input type="number" class="form-control" id="numeroFibras" min="1">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="tamanhoPeDireito">Tamanho do Pé-Direito</label>
+                    <input type="number" class="form-control" id="tamanhoPeDireito" min="1">
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label for="especificacaoCabo">Especificação do cabo de fibra óptica:</label>
+                    <select class="form-select" id="especificacaoCabo">
+                        <option selected value="Multimodo 50/125μm">Multimodo 50/125μm</option>
+                        <option value="Monomodo 9/125μm">Monomodo 9/125μm</option>
+                    </select>
+                </div>
+            
+                <div class="form-group mb-3">
+                    <label for="caracteristicaFibra">Características da fibra óptica</label>
+                    <select class="form-select" id="caracteristicaFibra">
+                        <option selected value="LC">LC</option>
+                        <option value="LC">SC</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="quantidadeBackbones">Quantidade de backbones por andar:</label>
+                    <input type="number" class="form-control" id="quantidadeBackbones" min="1">
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label class="form-check-label" for="verificacaoBackbone">Backbone secundário</label>
+                    <input class="form-check-input" type="checkbox" id="verificacaoBackbone">
+                </div>
+        
+                <button class="btn btn-primary" id="calcularBtn">Calcular</button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="tabela" class="text-center">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th>Item</th>
+                        <th>Quantidade</th>
+                        <th>Medida</th>
+                    </tr>
+                </thead>
+                <tbody id="resultado">
+
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <footer>
+        <p>Davi Martins / Israel Davi / Iasmin de Almeida</p>
+        <p>INF3</p>
+    </footer>   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>
