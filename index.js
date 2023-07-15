@@ -1,6 +1,6 @@
 function updateBackboneLimit() {
-    var numeroFibras = document.getElementById("numeroFibras");
-    var quantidadeBackbones = document.getElementById("quantidadeBackbones");
+    let numeroFibras = document.querySelector("#numeroFibras");
+    let quantidadeBackbones = document.querySelector("#quantidadeBackbones");
     quantidadeBackbones.max = numeroFibras.value;
 }
 
