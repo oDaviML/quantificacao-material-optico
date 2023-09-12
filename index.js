@@ -48,6 +48,7 @@ function calcularBackbonePrimario() {
     let numeroFibrasPrimario = parseInt(document.querySelector("#numeroFibrasPrimario").value);
     let quantidadeBackbonesPrimario = parseInt(document.querySelector("#quantidadeBackbonesPrimario").value);
     let distanciaFibra = parseInt(document.querySelector("#distanciaFibra").value);
+    let especificacaoCaboPrimario = document.querySelector("#especificacaoCaboPrimario").value;
 
     let pares = numeroFibrasPrimario * quantidadeBackbonesPrimario;
     let fibrasTotal = pares * 2;
@@ -60,7 +61,7 @@ function calcularBackbonePrimario() {
 
     distanciaFibra = (distanciaFibra * quantidadeBackbonesPrimario) * 1.2;
 
-    adicionarResultado(1, "Cabo de fibra óptica - Loose - " + caracteristicaFibraPrimario, distanciaFibra, "m");
+    adicionarResultado(1, "Cabo de fibra óptica - "+ especificacaoCaboPrimario +" - " + caracteristicaFibraPrimario, distanciaFibra, "m");
     adicionarResultado(2, "Caixa DIO (24 portas)", quantidadeDIO, "unid.");
     adicionarResultado(3, "Acoplador óptico "+ caracteristicaFibraPrimario +" - LC - simples", acoplador, "unid.");
     adicionarResultado(4, "Pig tail - " + caracteristicaFibraPrimario + " - LC - simples", pigTail, "unid.");
