@@ -52,29 +52,25 @@ function calcularBackbonePrimario() {
     let pares = numeroFibrasPrimario * quantidadeBackbonesPrimario;
     let fibrasTotal = pares * 2;
 
-    let quantidadeDIO = Math.ceil((numeroFibrasPrimario / 2) / 24);
-    let acoplador = numeroFibrasPrimario * quantidadeBackbonesPrimario;
-    let pigTail = fibrasTotal;
-    let bandejaEmenda = Math.ceil(fibrasTotal / 12);
+    let quantidadeDIO = Math.ceil((numeroFibrasPrimario / 2) / 24) * 2;
+    let acoplador = fibrasTotal;
+    let pigTail = fibrasTotal * 2;
+    let bandejaEmenda = Math.ceil(fibrasTotal / 12) * 2;
+    let cordaoOptico = pares * quantidadeBackbonesPrimario;
 
-
-    /*
-    let acoplador = numeroFibrasPrimario * 2;
-    let pigTail = numeroFibrasPrimario * 2;
-    */
-    
     distanciaFibra = (distanciaFibra * quantidadeBackbonesPrimario) * 1.2;
 
-    adicionarResultado(1, "Cabo de fibra óptica - Loose - " + caracteristicaFibraPrimario + "", distanciaFibra, "m");
+    adicionarResultado(1, "Cabo de fibra óptica - Loose - " + caracteristicaFibraPrimario, distanciaFibra, "m");
     adicionarResultado(2, "Caixa DIO (24 portas)", quantidadeDIO, "unid.");
-    adicionarResultado(3, "Acoplador óptico "+ caracteristicaFibraPrimario +" - LC - duplo", acoplador, "unid.");
-    adicionarResultado(4, "Pig tail - " + caracteristicaFibraPrimario + " - LC - duplo", pigTail, "unid.");
-    adicionarResultado(5, "Bandeja emenda - (12 portas)", bandejaEmenda, "unid.");
+    adicionarResultado(3, "Acoplador óptico "+ caracteristicaFibraPrimario +" - LC - simples", acoplador, "unid.");
+    adicionarResultado(4, "Pig tail - " + caracteristicaFibraPrimario + " - LC - simples", pigTail, "unid.");
+    adicionarResultado(5, "Cordão óptico - " + caracteristicaFibraPrimario + " - LC - duplo", cordaoOptico, "unid.");
+    adicionarResultado(6, "Bandeja emenda - (12 portas)", bandejaEmenda, "unid.");
 
-    let etiquetasCOP = pigTail + acoplador;
+    let etiquetasCOP = pigTail + cordaoOptico;
     let etiquetasDIO = pigTail;
 
-    adicionarResultadoMiscelania(1, "Etiqueta para os cordões ópticos e pigtails", etiquetasCOP, "Unidades");
+    adicionarResultadoMiscelania(1, "Etiqueta para os cordões ópticos e Pig Tails", etiquetasCOP, "Unidades");
     adicionarResultadoMiscelania(2, "Etiqueta para Portas do DIO", etiquetasDIO, "Unidades");
 }
 
@@ -87,10 +83,10 @@ function calcularBackboneSecundario() {
     let caracteristicaFibra = document.querySelector("#caracteristicaFibra").value;
     let quantidadeBackbones = parseInt(document.querySelector("#quantidadeBackbones").value);
 
-    let paresPorAndar = numeroFibras * quantidadeBackbones;
-    let paresTotal = paresPorAndar * (numeroPavimentos - 1);
+    let paresAndar = numeroFibras * quantidadeBackbones;
+    let paresTotal = paresAndar * (numeroPavimentos - 1);
 
-    let fibrasPorAndar = paresPorAndar * 2;  
+    let fibrasPorAndar = paresAndar * 2;  
     let fibrasTotal = paresTotal * 2;
 
     let caboFibra = 0;
@@ -100,24 +96,26 @@ function calcularBackboneSecundario() {
     caboFibra = Math.ceil(caboFibra * 1.2);
 
     let quantidadeDio = Math.ceil(paresTotal / 24);
-    let acoplador = paresPorAndar * (numeroPavimentos - 1);
+    let acoplador = paresTotal;
     let bandejaEmenda = Math.ceil(fibrasTotal / 12);
     let terminadores = Math.ceil(fibrasPorAndar / 8) * (numeroPavimentos - 1);
-    let pigTail = fibrasTotal;
+    let pigTailDio = fibrasTotal;   
+    let pigTail = paresTotal;
     let cordaoOptico = numeroFibras * (numeroPavimentos - 1);
 
     adicionarResultado(1, "Cabo de fibra óptica - " + especificacaoCabo + " - " + caracteristicaFibra + "", caboFibra, "m");
     adicionarResultado(2, "Caixa DIO (24 portas)", quantidadeDio, "unid.");
-    adicionarResultado(3, "Acopladore Óptico - " + caracteristicaFibra + "- LC - Duplo", acoplador, "unid.");
-    adicionarResultado(4, "Bandeja de emenda - (12 portas)", bandejaEmenda, "unid.");
-    adicionarResultado(5, "Terminadores Ópticos (8 fibras)", terminadores, "unid.");
-    adicionarResultado(6, "Pig tail - " + caracteristicaFibra + " - LC - Duplo", pigTail, "unid.");
-    adicionarResultado(8, "Cordão óptico - " + caracteristicaFibra + " - LC - Duplo", cordaoOptico, "unid.");
+    adicionarResultado(3, "Acoplador Óptico - " + caracteristicaFibra + "- LC - Duplo", acoplador, "unid.");
+    adicionarResultado(4, "Pig tail - " + caracteristicaFibra + " - LC - Simples", pigTailDio, "unid.");
+    adicionarResultado(5, "Pig tail - " + caracteristicaFibra + " - LC - Duplo", pigTail, "unid.");
+    adicionarResultado(6, "Cordão óptico - " + caracteristicaFibra + " - LC - Duplo", cordaoOptico, "unid.");
+    adicionarResultado(7, "Terminadores Ópticos (8 fibras)", terminadores, "unid.");
+    adicionarResultado(8, "Bandeja de emenda - (12 portas)", bandejaEmenda, "unid.");
 
-    let etiquetasCOP = pigTail + acoplador;
-    let etiquetasDIO = pigTail;
+    let etiquetasCOP = pigTail + cordaoOptico;
+    let etiquetasDIO = pigTailDio;
 
-    adicionarResultadoMiscelania(1, "Etiqueta para os cordões ópticos e pigtails", etiquetasCOP, "Unidades");
+    adicionarResultadoMiscelania(1, "Etiqueta para os cordões ópticos e Pig Tails", etiquetasCOP, "Unidades");
     adicionarResultadoMiscelania(2, "Etiqueta para Portas do DIO", etiquetasDIO, "Unidades");
 
 }
