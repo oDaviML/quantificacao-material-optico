@@ -14,59 +14,13 @@
     <h1>Quantificação de Material Óptico</h1>
     
     <section>
-        <div id="secundario" class="row">
-            <h2>Backbone Secundário</h2>
-            <div class="col-md-6">
-                <div class="form-group mb-3">
-                    <label for="numeroPavimentos">Nº de pavimentos da edificação:</label>
-                    <input type="number" class="form-control" id="numeroPavimentos" min="1">
-                </div>
-
-                <div class="form-group mb-3">
-                    <label for="numeroFibras">Nº de fibras disponíveis:</label>
-                    <input type="number" class="form-control" id="numeroFibras" min="1">
-                </div>
-
-                <div class="form-group mb-3">
-                    <label for="tamanhoPeDireito">Tamanho do Pé-Direito:</label>
-                    <input type="number" class="form-control" id="tamanhoPeDireito" min="1">
-                </div>
-            </div>
-            
-            <div class="col-md-6">
-                <div class="form-group mb-3">
-                    <label for="especificacaoCabo">Especificação do cabo de fibra óptica:</label>
-                    <select class="form-select" id="especificacaoCabo">
-                        <option selected value="Tight Buffer">Tight Buffer</option>
-                        <option value="Loose">Loose</option>
-                    </select>
-                </div>
-            
-                <div class="form-group mb-3">
-                    <label for="caracteristicaFibra">Características da fibra óptica:</label>
-                    <select class="form-select" id="caracteristicaFibra">
-                        <option selected value="Multimodo 50/125μm">Multimodo 50/125μm</option>
-                        <option value="Monomodo 9/125μm">Monomodo 9/125μm</option>
-                    </select>
-                </div>
-
-                <div class="form-group mb-3">
-                    <label for="quantidadeBackbones">Quantidade de backbones por andar:</label>
-                    <input type="number" class="form-control" id="quantidadeBackbones" min="1">
-                </div>
-            </div>
-        </div>
-        <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="backboneSecundario" checked>
-            <label class="form-check-label" for="backboneSecundario">Backbone Secundário</label>
-        </div>
         <div id="primario">
             <div class="row">
                 <h2>Backbone Primário</h2>
                 <div class="col-md-6">
                     <div class="form-group mb-3">
                         <label for="caracteristicaFibraPrimario">Características da fibra óptica:</label>
-                        <select class="form-select" id="caracteristicaFibraPrimario" disabled>
+                        <select class="form-select" id="caracteristicaFibraPrimario">
                             <option selected value="Multimodo 50/125μm">Multimodo 50/125μm</option>
                             <option value="Monomodo 9/125μm">Monomodo 9/125μm</option>
                         </select>
@@ -74,7 +28,7 @@
                     
                     <div class="form-group mb-3">
                         <label for="especificacaoCaboPrimario">Especificação do cabo de fibra óptica:</label>
-                        <select class="form-select" id="especificacaoCaboPrimario" disabled>
+                        <select class="form-select" id="especificacaoCaboPrimario" >
                             <option selected value="Loose">Loose</option>
                             <option value="Tight Buffer">Tight Buffer</option>
                         </select>
@@ -82,28 +36,77 @@
 
                     <div class="form-group mb-3">
                         <label for="numeroFibrasPrimario">Nº de fibras disponíveis:</label>
-                        <input type="number" class="form-control" id="numeroFibrasPrimario" disabled min="1">
+                        <input type="number" class="form-control" id="numeroFibrasPrimario"  min="1">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group mb-3">
                         <label for="quantidadeBackbonesPrimario">Quantidade de backbones:</label>
-                        <input type="number" class="form-control" id="quantidadeBackbonesPrimario" disabled min="1">
+                        <input type="number" class="form-control" id="quantidadeBackbonesPrimario"  min="1">
                     </div>
 
                     <div class="form-group mb-3">
                         <label for="distanciaFibra">Distancia entre os Backbones:</label>
-                        <input type="number" class="form-control" id="distanciaFibra" disabled min="1">
+                        <input type="number" class="form-control" id="distanciaFibra"  min="1">
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="backboneSecundario">
+            <label class="form-check-label" for="backboneSecundario">Backbone Secundário</label>
+        </div>
+
+        <div id="secundario" class="row">
+            <h2>Backbone Secundário</h2>
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label for="numeroPavimentos">Nº de pavimentos da edificação:</label>
+                    <input type="number" class="form-control" id="numeroPavimentos" min="1" disabled >
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="numeroFibras">Nº de fibras disponíveis:</label>
+                    <input type="number" class="form-control" id="numeroFibras" min="1" disabled >
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="tamanhoPeDireito">Tamanho do Pé-Direito:</label>
+                    <input type="number" class="form-control" id="tamanhoPeDireito" min="1" disabled >
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label for="especificacaoCabo">Especificação do cabo de fibra óptica:</label>
+                    <select class="form-select" id="especificacaoCabo" disabled >
+                        <option selected value="Tight Buffer">Tight Buffer</option>
+                        <option value="Loose">Loose</option>
+                    </select>
+                </div>
+            
+                <div class="form-group mb-3">
+                    <label for="caracteristicaFibra">Características da fibra óptica:</label>
+                    <select class="form-select" id="caracteristicaFibra" disabled >
+                        <option selected value="Multimodo 50/125μm">Multimodo 50/125μm</option>
+                        <option value="Monomodo 9/125μm">Monomodo 9/125μm</option>
+                    </select>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="quantidadeBackbones">Quantidade de backbones por andar:</label>
+                    <input type="number" class="form-control" id="quantidadeBackbones" min="1" disabled>
+                </div>
+            </div>
+        </div>
+        
         <div class="col-md-6">
             <button class="btn btn-primary" id="calcularBtn">Calcular</button>
         </div>
     </section>
     <section>
-        <div id="tabela" class="text-center">
+        <div id="tabela" class="text-center table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -117,7 +120,7 @@
             </table>
         </div>
         <h3>Miscelâneas</h3>
-        <div id="tabelaMiscelania" class="text-center">
+        <div id="tabelaMiscelania" class="text-center table-responsive">
             <table class="table table-hover">
                 <thead>
                     <tr>

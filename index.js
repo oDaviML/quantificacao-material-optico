@@ -57,7 +57,7 @@ function calcularBackbonePrimario() {
     let acoplador = fibrasTotal;
     let pigTail = fibrasTotal * 2;
     let bandejaEmenda = Math.ceil(fibrasTotal / 12) * 2;
-    let cordaoOptico = pares * quantidadeBackbonesPrimario;
+    let cordaoOptico = pares * 2;
 
     distanciaFibra = (distanciaFibra * quantidadeBackbonesPrimario) * 1.2;
 
