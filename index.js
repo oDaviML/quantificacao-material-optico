@@ -91,7 +91,7 @@ function calcularBackboneSecundario() {
     let fibrasTotal = paresTotal * 2;
 
     let caboFibra = 0;
-    for (let j = 1; j <= numeroPavimentos - 1; j++) {
+    for (let j = 1; j <= numeroPavimentos; j++) {
         caboFibra += tamanhoPeDireito * (j + 2);
     }
     caboFibra = Math.ceil(caboFibra * 1.2);
