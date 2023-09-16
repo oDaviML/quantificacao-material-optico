@@ -53,7 +53,7 @@ function calcularBackbonePrimario() {
     let pares = numeroFibrasPrimario * quantidadeBackbonesPrimario;
     let fibrasTotal = pares * 2;
 
-    let quantidadeDIO = Math.ceil((numeroFibrasPrimario / 2) / 24) * 2;
+    let quantidadeDIO = Math.ceil(fibrasTotal / 24) * 2;
     let acoplador = fibrasTotal;
     let pigTail = fibrasTotal * 2;
     let bandejaEmenda = Math.ceil(fibrasTotal / 12) * 2;
