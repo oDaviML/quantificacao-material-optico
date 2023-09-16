@@ -77,7 +77,7 @@ function calcularBackbonePrimario() {
 
 function calcularBackboneSecundario() {
 
-    let numeroPavimentos = parseInt(document.querySelector("#numeroPavimentos").value);
+    let numeroPavimentos = parseInt(document.querySelector("#numeroPavimentos").value) - 1;
     let numeroFibras = parseInt(document.querySelector("#numeroFibras").value);
     let tamanhoPeDireito = parseInt(document.querySelector("#tamanhoPeDireito").value);
     let especificacaoCabo = document.querySelector("#especificacaoCabo").value;
@@ -85,7 +85,7 @@ function calcularBackboneSecundario() {
     let quantidadeBackbones = parseInt(document.querySelector("#quantidadeBackbones").value);
 
     let paresAndar = numeroFibras * quantidadeBackbones;
-    let paresTotal = paresAndar * (numeroPavimentos - 1);
+    let paresTotal = paresAndar * numeroPavimentos;
 
     let fibrasPorAndar = paresAndar * 2;  
     let fibrasTotal = paresTotal * 2;
@@ -99,10 +99,10 @@ function calcularBackboneSecundario() {
     let quantidadeDio = Math.ceil(paresTotal / 24);
     let acoplador = paresTotal;
     let bandejaEmenda = Math.ceil(fibrasTotal / 12);
-    let terminadores = Math.ceil(fibrasPorAndar / 8) * (numeroPavimentos - 1);
+    let terminadores = Math.ceil(fibrasPorAndar / 8) * numeroPavimentos;
     let pigTailDio = fibrasTotal;   
     let pigTail = paresTotal;
-    let cordaoOptico = numeroFibras * (numeroPavimentos - 1);
+    let cordaoOptico = numeroFibras * numeroPavimentos;
 
     adicionarResultado(1, "Cabo de fibra óptica - " + especificacaoCabo + " - " + caracteristicaFibra + "", caboFibra, "m");
     adicionarResultado(2, "Caixa DIO (24 portas)", quantidadeDio, "unid.");
